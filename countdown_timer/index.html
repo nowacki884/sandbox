@@ -1,1 +1,50 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#242424" />
+    <meta name="description" content="A simple timer application with a perfect Chrome Lighthouse score" />
+    <link rel="manifest" href="./manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="icon" href="./icons/stopwatch32.png" />
+    <link rel="apple-touch-icon" sizes="32x32" href="./icons/stopwatch32.png" />
+    <link rel="apple-touch-icon" sizes="64x64" href="./icons/stopwatch64.png" />
+    <link rel="apple-touch-icon" sizes="128x128" href="./icons/stopwatch128.png" />
+    <link rel="apple-touch-icon" sizes="256x256" href="./icons/stopwatch256.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="./icons/stopwatch512.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./js/app.js" defer></script>
+    <title>CountDown Timer</title>
+</head>
+<body>
+    <div class="form_wrapper">
+        <h1>CountDown Timer</h1>
+        <label>
+            Minutes:
+            <input 
+                type="number" 
+                value="1" 
+                class="minutes_input"
+            />
+        </label>    
+        <label>
+            Seconds:
+            <input 
+                type="number" 
+                value="0" 
+                max="59" 
+                class="seconds_input" 
+            />
+        </label>
+        <button class="start_button">START</button>
+    </div>
+    <div class="time_wrapper hide">
+        <h1></h1>
+        <div class="timer_bar"></div>
+    </div>
+</body>
+</html>
