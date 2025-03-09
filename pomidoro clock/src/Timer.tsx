@@ -3,7 +3,7 @@ import FullscreenButton from "./FullscreenButton"
 
 interface TimerProps {
   timeInSeconds: number
-  resetCallback: Dispatch<SetStateAction<boolean>>
+  reset: () => void
 }
 
 export default function Timer(props: TimerProps) {
@@ -36,7 +36,7 @@ export default function Timer(props: TimerProps) {
 
       if (timeRemaining === 0) {
         alert("Time's up! Good job!")
-        props.resetCallback(false)
+        props.reset()
         return
       }
 
@@ -57,7 +57,7 @@ export default function Timer(props: TimerProps) {
         <button onClick={() => setIsPaused((prev) => !prev)}>
           {isPaused ? <i className="fa fa-play"></i> : <i className="fa fa-pause"></i>}
         </button>
-        <button onClick={() => props.resetCallback(false)}>
+        <button onClick={() => props.reset()}>
           <i className="fa fa-stop"></i>
         </button>
         <FullscreenButton />
