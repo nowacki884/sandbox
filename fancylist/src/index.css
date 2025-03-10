@@ -74,7 +74,7 @@ button:focus-within::after {
 }
 
 .list {
-  width: 400px;
+  width: 330px;
   border: 1px solid var(--clr-text);
   border-radius: 0.75em;
   padding: 0.75em;
