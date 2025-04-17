@@ -1,0 +1,23 @@
+[
+  {
+    "id": 0,
+    "currentlyWorking": true,
+    "projectName": "ShapeUp Fitness",
+    "projectDesc": "A gym website with login and membership functionality",
+    "stack": [
+      {
+        "name": "ReactJS",
+        "role": "Front-End"
+      },
+      {
+        "name": "TypeScript",
+        "role": "Dev Environment"
+      },
+      {
+        "name": "Google Firebase",
+        "role": "Back-End"
+      }
+    ],
+    "demoLink": "https://shapeupfitness-dev.netlify.app"
+  }
+]
