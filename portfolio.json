@@ -2,22 +2,70 @@
   {
     "id": 0,
     "currentlyWorking": true,
-    "projectName": "ShapeUp Fitness",
-    "projectDesc": "A gym website with login and membership functionality",
+    "projectName": "🏋️‍♀️ ShapeUp Fitness",
+    "projectDesc": "Strona internetowa siłowni z funkcją logowania i sprawdzania aktywnego karnetu użytkownika",
     "stack": [
       {
-        "name": "ReactJS",
+        "name": "React.js",
         "role": "Front-End"
       },
       {
         "name": "TypeScript",
-        "role": "Dev Environment"
+        "role": "Środowisko"
       },
       {
         "name": "Google Firebase",
-        "role": "Back-End"
+        "role": "Baza Danych"
       }
     ],
-    "demoLink": "https://shapeupfitness-dev.netlify.app"
+    "demoLink": "https://shapeupfitness-dev.netlify.app",
+    "projectColor": "#FFC904",
+    "projectTextColor": "FFFFFF"
+  },
+  {
+    "id": 1,
+    "currentlyWorking": false,
+    "projectName": "👟 Sneakers E-Com Store",
+    "projectDesc": "Przykładowa strona produktu sklepu internetowego",
+    "stack": [
+      {
+        "name": "React.js",
+        "role": "Front-End"
+      },
+      {
+        "name": "TypeScript",
+        "role": "Środowisko"
+      },
+      {
+        "name": "CSS",
+        "role": "Style"
+      }
+    ],
+    "demoLink": "https://sneakersecomstore.netlify.app",
+    "projectColor": "#A7C1F5",
+    "projectTextColor": "#2E3D19"
+  },
+  {
+    "id": 2,
+    "currentlyWorking": false,
+    "projectName": "💸 BuckBuddy",
+    "projectDesc": "Strona korzystająca z API kursu wymiany walut",
+    "stack": [
+      {
+        "name": "React.js",
+        "role": "Front-End"
+      },
+      {
+        "name": "TypeScript",
+        "role": "Środowisko"
+      },
+      {
+        "name": "FreecurrencyAPI",
+        "role": "API"
+      }
+    ],
+    "demoLink": "https://buckbuddy.netlify.app",
+    "projectColor": "#9BF6AC",
+    "projectTextColor": "#5C685D"
   }
 ]
