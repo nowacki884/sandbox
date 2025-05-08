@@ -1,0 +1,158 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-bg: #222;
+  --clr-text: #f0f0f0;
+  --clr-textarea-bg: #f0f0f044;
+}
+
+body {
+  font-family: "Space Mono", sans-serif;
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+}
+
+header {
+  padding: 1em 2em;
+}
+
+main {
+  padding: 0 2em;
+  display: flex;
+  min-height: calc(100vh - 5em);
+  gap: 1em;
+  align-items: flex-start;
+  /* overflow-y: hidden; */
+  overflow-x: auto;
+}
+
+button {
+  all: unset;
+  position: relative;
+  padding: 0.5em 1em;
+  border: 0.1em solid var(--clr-text);
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  min-width: max-content;
+}
+
+button::after {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 0.2em solid var(--clr-text);
+  border-radius: 0.4em;
+  opacity: 0;
+  transition: all 0.15s ease-in-out;
+  z-index: 999;
+}
+
+button.active,
+button:hover {
+  background-color: var(--clr-text);
+  color: var(--clr-bg);
+}
+
+button:focus-within::after {
+  opacity: 1;
+}
+
+.list-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.list {
+  width: 330px;
+  border: 1px solid var(--clr-text);
+  border-radius: 0.75em;
+  padding: 0.75em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  max-height: calc(100vh - 5em);
+}
+
+.list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list-title,
+.todo-title {
+  font-family: "Space Mono", sans-serif;
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 0.2em;
+  outline: none;
+  background-color: transparent;
+  color: var(--clr-text);
+  padding: 0.5em 0.75em;
+  box-shadow: none;
+  line-height: 1.25em;
+  height: 2.25em;
+  font-weight: bold;
+  resize: none;
+  -webkit-appearance: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list-title {
+  font-size: 1.2em;
+}
+
+.todo-title {
+  font-size: 1em;
+}
+
+.list-title:focus,
+.todo-title:focus {
+  background-color: var(--clr-textarea-bg);
+  box-shadow: inset 0 0 0 2px var(--clr-text);
+}
+
+.list-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-y: hidden;
+  gap: 0.75em;
+}
+
+.list-body::-webkit-scrollbar {
+  display: none;
+}
+
+.todo-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  gap: 0.5em;
+  scrollbar-color: var(--clr-textarea-bg) transparent;
+  scrollbar-width: thin;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+  border: 1px solid var(--clr-text);
+  border-radius: 0.5em;
+}
