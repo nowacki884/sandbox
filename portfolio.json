@@ -67,5 +67,28 @@
     "demoLink": "https://buckbuddy.netlify.app",
     "projectColor": "#9BF6AC",
     "projectTextColor": "#5C685D"
+  },
+  {
+    "id": 3,
+    "currentlyWorking": false,
+    "projectName": "✅ FancyList",
+    "projectDesc": "Strona typu to-do list",
+    "stack": [
+      {
+        "name": "React.js",
+        "role": "Front-End"
+      },
+      {
+        "name": "TypeScript",
+        "role": "Środowisko"
+      },
+      {
+        "name": "Local Storage",
+        "role": "Baza danych"
+      }
+    ],
+    "demoLink": "https://fancylist.netlify.app",
+    "projectColor": "#16C60C",
+    "projectTextColor": "#2B2917"
   }
 ]
