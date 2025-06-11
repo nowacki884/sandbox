@@ -6,7 +6,7 @@
     "projectDesc": "Strona internetowa siłowni z funkcją logowania i sprawdzania aktywnego karnetu użytkownika",
     "stack": [
       {
-        "name": "React.js",
+        "name": "ReactJS",
         "role": "Front-End"
       },
       {
@@ -54,7 +54,7 @@
     "projectDesc": "Strona korzystająca z API kursu wymiany walut",
     "stack": [
       {
-        "name": "React.js",
+        "name": "ReactJS",
         "role": "Front-End"
       },
       {
@@ -78,7 +78,7 @@
     "projectDesc": "Strona typu to-do list",
     "stack": [
       {
-        "name": "React.js",
+        "name": "ReactJS",
         "role": "Front-End"
       },
       {
@@ -94,5 +94,25 @@
     "projectColor": "#16C60C",
     "projectTextColor": "#2B2917",
     "shadowColor": "#13a80a"
+  },
+  {
+    "id": 4,
+    "currentlyWorking": false,
+    "projectName": "🍅 Pomidoro Clock",
+    "projectDesc": "Strona typu pomodoro clock",
+    "stack": [
+      {
+        "name": "ReactJS",
+        "role": "Front-End"
+      },
+      {
+        "name": "TypeScript",
+        "role": "Środowisko"
+      }
+    ],
+    "demoLink": "https://pomidoroclock.netlify.app/",
+    "projectColor": "#f03a17",
+    "projectTextColor": "#040404",
+    "shadowColor": "#cc3114"
   }
 ]
