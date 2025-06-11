@@ -20,7 +20,9 @@
     ],
     "demoLink": "https://shapeupfitness-dev.netlify.app",
     "projectColor": "#FFC904",
-    "projectTextColor": "#222222"
+    "projectTextColor": "#222222",
+    "highlightColor": "#ffe705",
+    "shadowColor": "#d9ab03"
   },
   {
     "id": 1,
@@ -43,7 +45,9 @@
     ],
     "demoLink": "https://sneakersecomstore.netlify.app",
     "projectColor": "#A7C1F5",
-    "projectTextColor": "#2E3D19"
+    "projectTextColor": "#2E3D19",
+    "highlightColor": "#c0deff",
+    "shadowColor": "#8ea4d0"
   },
   {
     "id": 2,
@@ -66,7 +70,9 @@
     ],
     "demoLink": "https://buckbuddy.netlify.app",
     "projectColor": "#9BF6AC",
-    "projectTextColor": "#5C685D"
+    "projectTextColor": "#5C685D",
+    "highlightColor": "#b2ffc6",
+    "shadowColor": "#84d192"
   },
   {
     "id": 3,
@@ -89,6 +95,8 @@
     ],
     "demoLink": "https://fancylist.netlify.app",
     "projectColor": "#16C60C",
-    "projectTextColor": "#2B2917"
+    "projectTextColor": "#2B2917",
+    "highlightColor": "#19e40e",
+    "shadowColor": "#13a80a"
   }
 ]
