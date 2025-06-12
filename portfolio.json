@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "currentlyWorking": false,
+    "currentlyWorking": true,
     "projectName": "🏋️‍♀️ ShapeUp Fitness",
     "projectDesc": "Strona internetowa siłowni z funkcją logowania i sprawdzania aktywnego karnetu użytkownika",
     "stack": [
