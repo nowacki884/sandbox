@@ -26,30 +26,6 @@
   {
     "id": 1,
     "currentlyWorking": false,
-    "projectName": "👟 Sneakers E-Com Store",
-    "projectDesc": "Przykładowa strona produktu sklepu internetowego",
-    "stack": [
-      {
-        "name": "HTML",
-        "role": "Front-End"
-      },
-      {
-        "name": "JavaScript",
-        "role": "Interaktywność"
-      },
-      {
-        "name": "CSS",
-        "role": "Style"
-      }
-    ],
-    "demoLink": "https://sneakersecomstore.netlify.app",
-    "projectColor": "#A7C1F5",
-    "projectTextColor": "#2E3D19",
-    "shadowColor": "#8ea4d0"
-  },
-  {
-    "id": 2,
-    "currentlyWorking": false,
     "projectName": "💸 BuckBuddy",
     "projectDesc": "Strona korzystająca z API kursu wymiany walut",
     "stack": [
@@ -72,7 +48,7 @@
     "shadowColor": "#84d192"
   },
   {
-    "id": 3,
+    "id": 2,
     "currentlyWorking": false,
     "projectName": "✅ FancyList",
     "projectDesc": "Strona typu to-do list",
@@ -96,7 +72,7 @@
     "shadowColor": "#13a80a"
   },
   {
-    "id": 4,
+    "id": 3,
     "currentlyWorking": false,
     "projectName": "🍅 Pomidoro Clock",
     "projectDesc": "Strona typu pomodoro clock",
@@ -114,5 +90,29 @@
     "projectColor": "#f03a17",
     "projectTextColor": "#040404",
     "shadowColor": "#cc3114"
+  },
+  {
+    "id": 4,
+    "currentlyWorking": false,
+    "projectName": "👟 Sneakers E-Com Store",
+    "projectDesc": "Przykładowa strona produktu sklepu internetowego",
+    "stack": [
+      {
+        "name": "HTML",
+        "role": "Front-End"
+      },
+      {
+        "name": "JavaScript",
+        "role": "Interaktywność"
+      },
+      {
+        "name": "CSS",
+        "role": "Style"
+      }
+    ],
+    "demoLink": "https://sneakersecomstore.netlify.app",
+    "projectColor": "#A7C1F5",
+    "projectTextColor": "#2E3D19",
+    "shadowColor": "#8ea4d0"
   }
 ]
