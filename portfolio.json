@@ -6,16 +6,13 @@
     "projectDesc": "Strona internetowa siłowni z funkcją logowania i sprawdzania aktywnego karnetu użytkownika",
     "stack": [
       {
-        "name": "ReactJS",
-        "role": "Front-End"
+        "name": "ReactJS"
       },
       {
-        "name": "TypeScript",
-        "role": "Środowisko"
+        "name": "TypeScript"
       },
       {
-        "name": "Google Firebase",
-        "role": "Baza Danych"
+        "name": "Google Firebase"
       }
     ],
     "demoLink": "https://shapeupfitness-dev.netlify.app",
@@ -28,19 +25,16 @@
     "id": 1,
     "currentlyWorking": false,
     "projectName": "💸 BuckBuddy",
-    "projectDesc": "Strona korzystająca z API kursu wymiany walut",
+    "projectDesc": "Strona do przeliczania walut korzystająca z API aktualnych kursów wymiany",
     "stack": [
       {
-        "name": "ReactJS",
-        "role": "Front-End"
+        "name": "ReactJS"
       },
       {
-        "name": "TypeScript",
-        "role": "Środowisko"
+        "name": "TypeScript"
       },
       {
-        "name": "FreecurrencyAPI",
-        "role": "API"
+        "name": "FreecurrencyAPI"
       }
     ],
     "demoLink": "https://buckbuddy.netlify.app",
@@ -53,19 +47,16 @@
     "id": 2,
     "currentlyWorking": false,
     "projectName": "✅ FancyList",
-    "projectDesc": "Strona typu to-do list",
+    "projectDesc": "Strona typu to-do list z możliwością dodawania/edycji/usuwania list zadań oraz elementów w tych listach",
     "stack": [
       {
-        "name": "ReactJS",
-        "role": "Front-End"
+        "name": "ReactJS"
       },
       {
-        "name": "TypeScript",
-        "role": "Środowisko"
+        "name": "TypeScript"
       },
       {
-        "name": "Local Storage",
-        "role": "Baza danych"
+        "name": "Local Storage"
       }
     ],
     "demoLink": "https://fancylist.netlify.app",
@@ -78,15 +69,13 @@
     "id": 3,
     "currentlyWorking": false,
     "projectName": "🍅 Pomidoro Clock",
-    "projectDesc": "Strona typu pomodoro clock",
+    "projectDesc": "Strona typu pomodoro clock z możliwością wyboru czasu do odliczenia oraz pełnego ekranu do lepszego skupienia się",
     "stack": [
       {
-        "name": "ReactJS",
-        "role": "Front-End"
+        "name": "ReactJS"
       },
       {
-        "name": "TypeScript",
-        "role": "Środowisko"
+        "name": "TypeScript"
       }
     ],
     "demoLink": "https://pomidoroclock.netlify.app/",
@@ -99,19 +88,16 @@
     "id": 4,
     "currentlyWorking": false,
     "projectName": "👟 Sneakers E-Com Store",
-    "projectDesc": "Przykładowa strona produktu sklepu internetowego",
+    "projectDesc": "Przykładowa strona produktu sklepu internetowego z możliwością dodania przedmiotu i usunięcia go z koszyka",
     "stack": [
       {
-        "name": "HTML",
-        "role": "Front-End"
+        "name": "HTML"
       },
       {
-        "name": "JavaScript",
-        "role": "Interaktywność"
+        "name": "JavaScript"
       },
       {
-        "name": "CSS",
-        "role": "Style"
+        "name": "CSS"
       }
     ],
     "demoLink": "https://sneakersecomstore.netlify.app",
