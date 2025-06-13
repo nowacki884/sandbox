@@ -21,7 +21,8 @@
     "demoLink": "https://shapeupfitness-dev.netlify.app",
     "projectColor": "#FFC904",
     "projectTextColor": "#222222",
-    "shadowColor": "#d9ab03"
+    "shadowColor": "#d9ab03",
+    "finishDate": 0,
   },
   {
     "id": 1,
@@ -45,7 +46,8 @@
     "demoLink": "https://buckbuddy.netlify.app",
     "projectColor": "#9BF6AC",
     "projectTextColor": "#5C685D",
-    "shadowColor": "#84d192"
+    "shadowColor": "#84d192",
+    "finishDate": 1743458400000
   },
   {
     "id": 2,
@@ -69,7 +71,8 @@
     "demoLink": "https://fancylist.netlify.app",
     "projectColor": "#16C60C",
     "projectTextColor": "#2B2917",
-    "shadowColor": "#13a80a"
+    "shadowColor": "#13a80a",
+    "finishDate": 1740783600000
   },
   {
     "id": 3,
@@ -89,7 +92,8 @@
     "demoLink": "https://pomidoroclock.netlify.app/",
     "projectColor": "#f03a17",
     "projectTextColor": "#040404",
-    "shadowColor": "#cc3114"
+    "shadowColor": "#cc3114",
+    "finishDate": 1740783600000
   },
   {
     "id": 4,
@@ -113,6 +117,7 @@
     "demoLink": "https://sneakersecomstore.netlify.app",
     "projectColor": "#A7C1F5",
     "projectTextColor": "#2E3D19",
-    "shadowColor": "#8ea4d0"
+    "shadowColor": "#8ea4d0",
+    "finishDate": 1743458400000
   }
 ]
