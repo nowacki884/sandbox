@@ -5,5 +5,5 @@ A simple Chrome extension that automatically closes chosen tabs every minute in 
 ## Modes
 
 1. Total Purge Mode - closes ALL tabs
-2. Whitelist Mode - closes all tabs BUT leaves specified ones
-3. Blacklist Mode - closes only specified ones
+2. Whitelist Mode - closes ALL tabs BUT leaves specified ones
+3. Blacklist Mode - closes ONLY specified tabs and leaves the rest
