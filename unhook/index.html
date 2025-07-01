@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Auto Close Browser - Options</title>
+  </head>
+  <body>
+    <header>
+      <h1>⚓UnHook</h1>
+    </header>
+    <main>
+      <div class="row">
+        <label for="mode"
+          >Mode
+
+          <select id="mode" name="mode">
+            <option value="purge" id="purge-option">Total Purge Mode</option>
+            <option value="whitelist" id="whitelist-option">Whitelist Mode</option>
+            <option value="blacklist" id="blacklist-option">Blacklist Mode</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="row">
+        <label for="start-time"
+          >Start Time
+
+          <div>
+            <input name="start-time" type="number" min="0" max="23" id="start-time" value="23" />:00
+          </div>
+        </label>
+        <label for="end-time"
+          >End Time
+
+          <div>
+            <input name="end-time" type="number" min="0" max="23" id="end-time" value="6" />:00
+          </div>
+        </label>
+      </div>
+
+      <div id="whitelist-wrapper" style="display: none; margin-top: 2em">
+        <div class="row">
+          <h2>Whitelisted websites:</h2>
+        </div>
+        <div class="row">
+          <input type="text" id="whitelist-input" placeholder="Address" />
+          <button id="whitelist-save-button">Add</button>
+        </div>
+        <div class="row">
+          <ul id="whitelist-addresses"></ul>
+        </div>
+      </div>
+
+      <div id="blacklist-wrapper" style="display: none; margin-top: 2em">
+        <div class="row">
+          <h2>Blacklisted websites:</h2>
+        </div>
+        <div class="row">
+          <input type="text" id="blacklist-input" placeholder="Address" />
+          <button id="blacklist-save-button">Add</button>
+        </div>
+        <div class="row">
+          <ul id="blacklist-addresses"></ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <button id="save-button" style="display: none">Save</button>
+      </div>
+
+      <p id="mode-status"></p>
+      <br />
+      <p id="time-status"></p>
+
+      <!-- NOTE: TESTING -->
+      <!-- <button id="test">test</button> -->
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
