@@ -1,6 +1,28 @@
 [
   {
     "id": 0,
+    "currentlyWorking": true,
+    "projectName": "⚓ UnHook",
+    "projectDesc": "Wtyczka do przeglądarki, która co 1 minutę automatycznie zamyka wybrane przez użytkownika karty w wybranym okresie czasu",
+    "stack": [
+      {
+        "name": "HTML"
+      },
+      {
+        "name": "JavaScript"
+      },
+      {
+        "name": "CSS"
+      }
+    ],
+    "demoLink": "https://github.com/nowacki884/sandbox/tree/main/unhook",
+    "projectColor": "#a13b4f",
+    "projectTextColor": "#FFFFEE",
+    "shadowColor": "#893243",
+    "finishDate": 0
+  },
+  {
+    "id": 1,
     "currentlyWorking": false,
     "projectName": "🏋️‍♀️ ShapeUp Fitness",
     "projectDesc": "Strona internetowa siłowni z funkcją logowania i sprawdzania aktywnego karnetu użytkownika",
@@ -22,7 +44,7 @@
     "finishDate": 1748728800000
   },
   {
-    "id": 1,
+    "id": 2,
     "currentlyWorking": false,
     "projectName": "💸 BuckBuddy",
     "projectDesc": "Strona do przeliczania walut korzystająca z API aktualnych kursów wymiany",
@@ -44,7 +66,7 @@
     "finishDate": 1743458400000
   },
   {
-    "id": 2,
+    "id": 3,
     "currentlyWorking": false,
     "projectName": "✅ FancyList",
     "projectDesc": "Strona typu to-do list z możliwością dodawania/edycji/usuwania list zadań oraz elementów w tych listach",
@@ -66,7 +88,7 @@
     "finishDate": 1740783600000
   },
   {
-    "id": 3,
+    "id": 4,
     "currentlyWorking": false,
     "projectName": "🍅 Pomidoro Clock",
     "projectDesc": "Strona typu pomodoro clock z możliwością wyboru czasu do odliczenia oraz pełnego ekranu do lepszego skupienia się",
@@ -85,7 +107,7 @@
     "finishDate": 1740783600000
   },
   {
-    "id": 4,
+    "id": 5,
     "currentlyWorking": false,
     "projectName": "👟 Sneakers E-Com Store",
     "projectDesc": "Przykładowa strona produktu sklepu internetowego z możliwością dodania przedmiotu i usunięcia go z koszyka",
