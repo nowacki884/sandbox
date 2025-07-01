@@ -73,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
           whitelistAddresses.appendChild(li)
           delButton.addEventListener("click", () => {
-            // TODO: Delete
             whitelistArray = whitelistArray.filter(
               (whitelistAddress) => whitelistAddress !== address
             )
@@ -99,7 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
           blacklistAddresses.appendChild(li)
           delButton.addEventListener("click", () => {
-            // TODO: Delete
             blacklistArray = blacklistArray.filter(
               (blacklistAddress) => blacklistAddress !== address
             )
@@ -159,7 +157,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     whitelistAddresses.appendChild(li)
     delButton.addEventListener("click", () => {
-      // TODO: Delete
       whitelistArray = whitelistArray.filter((whitelistAddress) => whitelistAddress !== inputVal)
       li.remove()
       saveButton.style.display = "initial"
@@ -192,7 +189,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     blacklistAddresses.appendChild(li)
     delButton.addEventListener("click", () => {
-      // TODO: Delete
       blacklistArray = blacklistArray.filter((blacklistAddress) => blacklistAddress !== inputVal)
       li.remove()
       saveButton.style.display = "initial"
@@ -239,14 +235,4 @@ document.addEventListener("DOMContentLoaded", () => {
       saveButton.style.display = "none"
     })
   })
-
-  // NOTE: TEST
-  // const test = document.querySelector("#test")
-  // test.addEventListener("click", () => {
-  //   chrome.windows.getCurrent({ populate: true }).then((windowInfo) => {
-  //     for (const tabInfo of windowInfo.tabs) {
-  //       timeStatus.textContent += tabInfo.url
-  //     }
-  //   }, console.log)
-  // })
 })

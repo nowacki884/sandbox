@@ -120,22 +120,18 @@ function closeTabs() {
 }
 
 chrome.alarms.onAlarm.addListener(() => {
-  const now = new Date()
-
   getHours((startHour, endHour) => {
+    const now = new Date()
     const nowTime = now.getTime()
-
     const t1 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), startHour).getTime()
-    let t2
+    const t2 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), endHour).getTime()
 
     if (endHour > startHour) {
       // Same day
-      t2 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), endHour).getTime()
+      if (nowTime >= t1 && nowTime < t2) closeTabs()
     } else {
       // Next day
-      t2 = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, endHour).getTime()
+      if (nowTime >= t1 || nowTime < t2) closeTabs()
     }
-
-    if (nowTime >= t1 && nowTime < t2) closeTabs()
   })
 })
