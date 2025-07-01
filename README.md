@@ -10,3 +10,6 @@ For business or more info visit [my website](https://dawidnowacki.dev).
 - [✅ FancyList](https://fancylist.netlify.app)
 - [🍅 Pomidoro Clock](https://pomidoroclock.netlify.app)
 - [👟 Sneakers E-Com Store](https://sneakersecomstore.netlify.app)
+
+## Chrome extensions source code:
+- [⚓ UnHook](https://github.com/nowacki884/sandbox/tree/main/unhook)
