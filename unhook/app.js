@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  let savedMode = ""
   const modeSelect = document.querySelector("#mode")
   const purgeOption = document.querySelector("#purge-option")
   const whitelistOption = document.querySelector("#whitelist-option")
@@ -26,6 +27,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const updateableElements = [startTime, endTime]
 
+  const chromeStorageElements = [
+    "startHour",
+    "endHour",
+    "mode",
+    "whitelistAddresses",
+    "blacklistAddresses",
+    "isOnLockdown",
+  ]
+
   // NOTE: Init
   updateableElements.forEach((el) => {
     el.addEventListener("change", () => {
@@ -35,79 +45,122 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  chrome.storage.sync.get(
-    ["startHour", "endHour", "mode", "whitelistAddresses", "blacklistAddresses"],
-    (result) => {
-      if (result.startHour !== undefined) startTime.value = result.startHour
-      if (result.endHour !== undefined) endTime.value = result.endHour
-      if (result.mode !== undefined) {
-        switch (result.mode) {
-          case "purge":
-            purgeOption.selected = "selected"
-            break
-          case "whitelist":
-            whitelistOption.selected = "selected"
-            whitelistWrapper.style.display = "block"
-            break
-          case "blacklist":
-            blacklistOption.selected = "selected"
-            blacklistWrapper.style.display = "block"
-            break
-          default:
-            break
-        }
-      }
-      if (result.whitelistAddresses !== undefined && result.whitelistAddresses.length > 0) {
-        result.whitelistAddresses.forEach((address) => {
-          whitelistArray.push(address)
+  chrome.storage.sync.get(chromeStorageElements, (result) => {
+    if (result.startHour !== undefined) startTime.value = result.startHour
 
-          const li = document.createElement("li")
-          const p = document.createElement("p")
-          p.textContent = address
+    if (result.endHour !== undefined) endTime.value = result.endHour
 
-          const delButton = document.createElement("button")
-          delButton.textContent = "X"
-
-          li.appendChild(p)
-          li.appendChild(delButton)
-
-          whitelistAddresses.appendChild(li)
-          delButton.addEventListener("click", () => {
-            whitelistArray = whitelistArray.filter(
-              (whitelistAddress) => whitelistAddress !== address
-            )
-            li.remove()
-            saveButton.style.display = "initial"
-          })
-        })
-      }
-      if (result.blacklistAddresses !== undefined && result.blacklistAddresses.length > 0) {
-        result.blacklistAddresses.forEach((address) => {
-          blacklistArray.push(address)
-
-          const li = document.createElement("li")
-
-          const p = document.createElement("p")
-          p.textContent = address
-
-          const delButton = document.createElement("button")
-          delButton.textContent = "X"
-
-          li.appendChild(p)
-          li.appendChild(delButton)
-
-          blacklistAddresses.appendChild(li)
-          delButton.addEventListener("click", () => {
-            blacklistArray = blacklistArray.filter(
-              (blacklistAddress) => blacklistAddress !== address
-            )
-            li.remove()
-            saveButton.style.display = "initial"
-          })
-        })
+    if (result.mode !== undefined) {
+      savedMode = result.mode
+      switch (result.mode) {
+        case "purge":
+          purgeOption.selected = "selected"
+          break
+        case "whitelist":
+          whitelistOption.selected = "selected"
+          whitelistWrapper.style.display = "block"
+          break
+        case "blacklist":
+          blacklistOption.selected = "selected"
+          blacklistWrapper.style.display = "block"
+          break
+        default:
+          break
       }
     }
-  )
+
+    if (result.whitelistAddresses !== undefined && result.whitelistAddresses.length > 0) {
+      result.whitelistAddresses.forEach((address) => {
+        whitelistArray.push(address)
+
+        const li = document.createElement("li")
+        const p = document.createElement("p")
+        p.textContent = address
+
+        const delButton = document.createElement("button")
+        delButton.textContent = "X"
+
+        li.appendChild(p)
+        li.appendChild(delButton)
+
+        whitelistAddresses.appendChild(li)
+        delButton.addEventListener("click", () => {
+          whitelistArray = whitelistArray.filter((whitelistAddress) => whitelistAddress !== address)
+          li.remove()
+          saveButton.style.display = "initial"
+        })
+      })
+    }
+
+    if (result.blacklistAddresses !== undefined && result.blacklistAddresses.length > 0) {
+      result.blacklistAddresses.forEach((address) => {
+        blacklistArray.push(address)
+
+        const li = document.createElement("li")
+
+        const p = document.createElement("p")
+        p.textContent = address
+
+        const delButton = document.createElement("button")
+        delButton.textContent = "X"
+
+        li.appendChild(p)
+        li.appendChild(delButton)
+
+        blacklistAddresses.appendChild(li)
+        delButton.addEventListener("click", () => {
+          blacklistArray = blacklistArray.filter((blacklistAddress) => blacklistAddress !== address)
+          li.remove()
+          saveButton.style.display = "initial"
+        })
+      })
+    }
+
+    if (result.isOnLockdown !== undefined) {
+      if (result.isOnLockdown === false) return
+
+      const menuElements = document.querySelectorAll("main > *")
+      menuElements.forEach((el) => (el.style.display = "none"))
+
+      // NOTE: Lockdown menu
+      const div = document.createElement("div")
+      div.classList.add("lockdown")
+
+      const icon = document.createElement("h2")
+      icon.textContent = "🔒"
+
+      const info = document.createElement("p")
+      info.textContent = "Browser is now on lockdown!"
+
+      const unlockButton = document.createElement("button")
+      unlockButton.textContent = "Settings"
+
+      div.appendChild(icon)
+      div.appendChild(info)
+      div.appendChild(unlockButton)
+
+      const main = document.querySelector("main")
+      main.appendChild(div)
+
+      unlockButton.addEventListener("click", () => {
+        div.style.display = "none"
+
+        console.log(menuElements)
+
+        menuElements.forEach((el) => {
+          el.style.display = "flex"
+
+          if (el.id === "whitelist-wrapper" && savedMode !== "whitelist") {
+            el.style.display = "none"
+          }
+
+          if (el.id === "blacklist-wrapper" && savedMode !== "blacklist") {
+            el.style.display = "none"
+          }
+        })
+      })
+    }
+  })
 
   modeSelect.addEventListener("change", (e) => {
     const selectedMode = e.target.value
@@ -215,12 +268,28 @@ document.addEventListener("DOMContentLoaded", () => {
       return
     }
 
+    let isOnLockdown = false
+
+    const now = new Date()
+    const nowTime = now.getTime()
+    const t1 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), parsedStartTime).getTime()
+    const t2 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), parsedEndTime).getTime()
+
+    if (parsedEndTime > parsedStartTime) {
+      // Same day
+      if (nowTime >= t1 && nowTime < t2) isOnLockdown = true
+    } else {
+      // Next day
+      if (nowTime >= t1 || nowTime < t2) isOnLockdown = true
+    }
+
     const payload = {
       startHour: parsedStartTime,
       endHour: parsedEndTime,
       mode: modeSelect.value,
       whitelistAddresses: whitelistArray,
       blacklistAddresses: blacklistArray,
+      isOnLockdown: isOnLockdown,
     }
 
     chrome.storage.sync.set(payload, () => {

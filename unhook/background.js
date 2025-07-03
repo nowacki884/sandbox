@@ -102,20 +102,22 @@ function handleBlacklist() {
 }
 
 function closeTabs() {
-  getMode((mode) => {
-    switch (mode) {
-      case "purge":
-        closeAllWindows()
-        break
-      case "whitelist":
-        handleWhitelist()
-        break
-      case "blacklist":
-        handleBlacklist()
-        break
-      default:
-        break
-    }
+  chrome.storage.sync.set({ isOnLockdown: true }, () => {
+    getMode((mode) => {
+      switch (mode) {
+        case "purge":
+          closeAllWindows()
+          break
+        case "whitelist":
+          handleWhitelist()
+          break
+        case "blacklist":
+          handleBlacklist()
+          break
+        default:
+          break
+      }
+    })
   })
 }
 
@@ -128,10 +130,18 @@ chrome.alarms.onAlarm.addListener(() => {
 
     if (endHour > startHour) {
       // Same day
-      if (nowTime >= t1 && nowTime < t2) closeTabs()
+      if (nowTime >= t1 && nowTime < t2) {
+        closeTabs()
+      } else {
+        chrome.storage.sync.set({ isOnLockdown: false })
+      }
     } else {
       // Next day
-      if (nowTime >= t1 || nowTime < t2) closeTabs()
+      if (nowTime >= t1 || nowTime < t2) {
+        closeTabs()
+      } else {
+        chrome.storage.sync.set({ isOnLockdown: false })
+      }
     }
   })
 })
