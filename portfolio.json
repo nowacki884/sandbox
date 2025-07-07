@@ -3,7 +3,10 @@
     "id": 0,
     "currentlyWorking": true,
     "projectName": "⚓ UnHook",
-    "projectDesc": "Wtyczka do przeglądarki, która co 1 minutę automatycznie zamyka wybrane przez użytkownika karty w wybranym okresie czasu",
+    "projectDesc": {
+      "PL": "Wtyczka do przeglądarki, która co 1 minutę automatycznie zamyka wybrane przez użytkownika karty w wybranym okresie czasu",
+      "EN": "A browser extension that automatically closes user-selected tabs every minute for a selected period of time."
+    },
     "stack": [
       {
         "name": "HTML"
@@ -25,7 +28,10 @@
     "id": 1,
     "currentlyWorking": false,
     "projectName": "🏋️‍♀️ ShapeUp Fitness",
-    "projectDesc": "Strona internetowa siłowni z funkcją logowania i sprawdzania aktywnego karnetu użytkownika",
+    "projectDesc": {
+      "PL": "Strona internetowa siłowni z funkcją logowania i sprawdzania aktywnego karnetu użytkownika",
+      "EN": "A gym website with login/register and active gym membership checking functionality"
+    },
     "stack": [
       {
         "name": "ReactJS"
@@ -47,7 +53,10 @@
     "id": 2,
     "currentlyWorking": false,
     "projectName": "💸 BuckBuddy",
-    "projectDesc": "Strona do przeliczania walut korzystająca z API aktualnych kursów wymiany",
+    "projectDesc": {
+      "PL": "Strona do przeliczania walut korzystająca z API aktualnych kursów wymiany",
+      "EN": "A currency conversion site using live exchange rates API"
+    },
     "stack": [
       {
         "name": "ReactJS"
@@ -69,7 +78,10 @@
     "id": 3,
     "currentlyWorking": false,
     "projectName": "✅ FancyList",
-    "projectDesc": "Strona typu to-do list z możliwością dodawania/edycji/usuwania list zadań oraz elementów w tych listach",
+    "projectDesc": {
+      "PL": "Strona typu to-do list z możliwością dodawania/edycji/usuwania list zadań oraz elementów w tych listach",
+      "EN": "A to-do list website with the ability to add/edit/delete task lists and items in those lists"
+    },
     "stack": [
       {
         "name": "ReactJS"
@@ -91,7 +103,10 @@
     "id": 4,
     "currentlyWorking": false,
     "projectName": "🍅 Pomidoro Clock",
-    "projectDesc": "Strona typu pomodoro clock z możliwością wyboru czasu do odliczenia oraz pełnego ekranu do lepszego skupienia się",
+    "projectDesc": {
+      "PL": "Strona typu pomodoro clock z możliwością wyboru czasu do odliczenia oraz pełnego ekranu do lepszego skupienia się",
+      "EN": "A pomodoro clock type website with the option to choose the time to count down and full screen mode for better focus"
+    },
     "stack": [
       {
         "name": "ReactJS"
@@ -110,7 +125,10 @@
     "id": 5,
     "currentlyWorking": false,
     "projectName": "👟 Sneakers E-Com Store",
-    "projectDesc": "Przykładowa strona produktu sklepu internetowego z możliwością dodania przedmiotu i usunięcia go z koszyka",
+    "projectDesc": {
+      "PL": "Przykładowa strona produktu sklepu internetowego z możliwością dodania przedmiotu i usunięcia go z koszyka",
+      "EN": "An example of an online store product page with the ability to add and remove an item from the cart"
+    },
     "stack": [
       {
         "name": "HTML"
