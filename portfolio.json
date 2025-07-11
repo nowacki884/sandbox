@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "currentlyWorking": true,
+    "currentlyWorking": false,
     "projectName": "⚓ UnHook",
     "projectDesc": {
       "PL": "Wtyczka do przeglądarki, która co 1 minutę automatycznie zamyka wybrane przez użytkownika karty w wybranym okresie czasu",
@@ -22,7 +22,7 @@
     "projectColor": "#a13b4f",
     "projectTextColor": "#FFFFEE",
     "shadowColor": "#893243",
-    "finishDate": 0
+    "finishDate": 1751320800000
   },
   {
     "id": 1,
