@@ -20,21 +20,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const blacklistAddresses = document.querySelector("#blacklist-addresses")
   let blacklistArray = []
 
+  const addCurrentButton = document.querySelector("#add-current-button")
+
   const saveButton = document.querySelector("#save-button")
 
   const modeStatus = document.querySelector("#mode-status")
   const timeStatus = document.querySelector("#time-status")
 
   const updateableElements = [startTime, endTime]
-
-  const chromeStorageElements = [
-    "startHour",
-    "endHour",
-    "mode",
-    "whitelistAddresses",
-    "blacklistAddresses",
-    "isOnLockdown",
-  ]
 
   // NOTE: Init
   updateableElements.forEach((el) => {
@@ -44,6 +37,16 @@ document.addEventListener("DOMContentLoaded", () => {
       timeStatus.textContent = ""
     })
   })
+
+  // NOTE: Sync with storage
+  const chromeStorageElements = [
+    "startHour",
+    "endHour",
+    "mode",
+    "whitelistAddresses",
+    "blacklistAddresses",
+    "isOnLockdown",
+  ]
 
   chrome.storage.sync.get(chromeStorageElements, (result) => {
     if (result.startHour !== undefined) startTime.value = result.startHour
@@ -162,6 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 
+  // NOTE: Edit functions
   modeSelect.addEventListener("change", (e) => {
     const selectedMode = e.target.value
 
@@ -251,6 +255,72 @@ document.addEventListener("DOMContentLoaded", () => {
     blacklistInput.value = ""
   })
 
+  addCurrentButton.addEventListener("click", () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      const activeTabUrl = tabs[0].url
+
+      const tmp = document.createElement("a")
+      tmp.href = activeTabUrl
+
+      const elementToAdd = tmp.hostname
+
+      if (savedMode === "whitelist") {
+        whitelistArray.push(elementToAdd)
+
+        const li = document.createElement("li")
+
+        const p = document.createElement("p")
+        p.textContent = elementToAdd
+
+        const delButton = document.createElement("button")
+        delButton.textContent = "X"
+
+        li.appendChild(p)
+        li.appendChild(delButton)
+
+        whitelistAddresses.appendChild(li)
+        delButton.addEventListener("click", () => {
+          whitelistArray = whitelistArray.filter(
+            (whitelistAddress) => whitelistAddress !== elementToAdd
+          )
+          li.remove()
+          saveButton.style.display = "initial"
+        })
+
+        saveButton.style.display = "initial"
+        whitelistInput.value = ""
+      }
+
+      if (savedMode === "blacklist") {
+        blacklistArray.push(elementToAdd)
+
+        const li = document.createElement("li")
+
+        const p = document.createElement("p")
+        p.textContent = elementToAdd
+
+        const delButton = document.createElement("button")
+        delButton.textContent = "X"
+
+        li.appendChild(p)
+        li.appendChild(delButton)
+
+        blacklistAddresses.appendChild(li)
+        delButton.addEventListener("click", () => {
+          blacklistArray = blacklistArray.filter(
+            (blacklistAddress) => blacklistAddress !== elementToAdd
+          )
+          li.remove()
+          saveButton.style.display = "initial"
+        })
+
+        saveButton.style.display = "initial"
+        blacklistInput.value = ""
+      }
+    })
+  })
+
+  // NOTE: Storage sync
   saveButton.addEventListener("click", () => {
     const parsedStartTime = parseInt(startTime.value, 10)
     const parsedEndTime = parseInt(endTime.value, 10)

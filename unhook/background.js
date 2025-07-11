@@ -1,14 +1,15 @@
 // "As a dog returns to its vomit, so fools repeat their folly."
 // Proverbs 26:11
 
+// NOTE: Init values
 const DEFAULT_START_HOUR = 23 // 11 PM
 const DEFAULT_END_HOUR = 6 // 6 AM
 const DEFAULT_MODE = "purge" // Close all tabs by default
 const DEFAULT_WHITELIST = [] // Just in case
 const DEFAULT_BLACKLIST = [] // Same here
-
 const CHECK_INTERVAL_MINUTES = 1
 
+// NOTE: Set up chrome interval
 chrome.runtime.onInstalled.addListener(() => {
   chrome.alarms.create("checkCloseTime", {
     periodInMinutes: CHECK_INTERVAL_MINUTES,
@@ -21,6 +22,7 @@ chrome.runtime.onStartup.addListener(() => {
   })
 })
 
+// NOTE: Saved data getters
 function getHours(callback) {
   chrome.storage.sync.get(["startHour", "endHour"], (result) =>
     callback(result.startHour ?? DEFAULT_START_HOUR, result.endHour ?? DEFAULT_END_HOUR)
@@ -43,6 +45,24 @@ function getBlacklist(callback) {
   )
 }
 
+// NOTE: URL detection
+function isUrlListed(tabUrl, list) {
+  let regexString = ""
+
+  list.forEach((el, index) => {
+    regexString += el
+
+    if (index !== list.length - 1) {
+      regexString += "|"
+    }
+  })
+
+  const regex = new RegExp(regexString)
+
+  return regex.test(tabUrl)
+}
+
+// NOTE: Tab close functions
 function closeAllWindows() {
   chrome.windows.getAll({}, (wins) => {
     wins.forEach((win) => chrome.windows.remove(win.id))
@@ -52,24 +72,21 @@ function closeAllWindows() {
 function handleWhitelist() {
   getWhitelist((whitelist) => {
     chrome.tabs.query({}, (tabs) => {
-      const tabIDs = []
+      const tabIDsToClose = []
 
       tabs.forEach((tab) => {
-        let isWhitelisted = false
+        const tabURL = `${tab.url}`
+        const isWhitelisted = isUrlListed(tabURL, whitelist)
 
-        whitelist.forEach((whitelistEl) => {
-          if (isWhitelisted) return
-          const tabURL = `${tab.url}`
-          isWhitelisted =
-            tabURL.startsWith(`https://${whitelistEl}`) ||
-            tabURL.startsWith(`https://www.${whitelistEl}`)
-        })
-
-        if (!isWhitelisted && !tabIDs.includes(tab.id)) tabIDs.push(tab.id)
+        if (!isWhitelisted && !tabIDsToClose.includes(tab.id)) {
+          tabIDsToClose.push(tab.id)
+        }
       })
 
-      if (tabIDs.length > 0) {
-        tabIDs.forEach((tabID) => chrome.tabs.remove(tabID))
+      if (tabIDsToClose.length > 0) {
+        tabIDsToClose.forEach((tabID) => {
+          chrome.tabs.remove(tabID)
+        })
       }
     })
   })
@@ -78,24 +95,21 @@ function handleWhitelist() {
 function handleBlacklist() {
   getBlacklist((blacklist) => {
     chrome.tabs.query({}, (tabs) => {
-      const tabIDs = []
+      const tabIDsToClose = []
 
       tabs.forEach((tab) => {
-        let isBlacklisted = false
+        const tabURL = `${tab.url}`
+        const isBlacklisted = isUrlListed(tabURL, blacklist)
 
-        blacklist.forEach((blacklistEl) => {
-          if (isBlacklisted) return
-          const tabURL = `${tab.url}`
-          isBlacklisted =
-            tabURL.startsWith(`https://${blacklistEl}`) ||
-            tabURL.startsWith(`https://www.${blacklistEl}`)
-        })
-
-        if (isBlacklisted && !tabIDs.includes(tab.id)) tabIDs.push(tab.id)
+        if (isBlacklisted && !tabIDsToClose.includes(tab.id)) {
+          tabIDsToClose.push(tab.id)
+        }
       })
 
-      if (tabIDs.length > 0) {
-        tabIDs.forEach((tabID) => chrome.tabs.remove(tabID))
+      if (tabIDsToClose.length > 0) {
+        tabIDsToClose.forEach((tabID) => {
+          chrome.tabs.remove(tabID)
+        })
       }
     })
   })
@@ -121,6 +135,7 @@ function closeTabs() {
   })
 }
 
+// NOTE: Time check
 chrome.alarms.onAlarm.addListener(() => {
   getHours((startHour, endHour) => {
     const now = new Date()
