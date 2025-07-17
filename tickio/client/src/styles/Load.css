@@ -1,0 +1,25 @@
+.loading__page .page_content__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+
+@keyframes spin {
+  0% {
+    rotate: 0deg;
+  }
+
+  100% {
+    rotate: 360deg;
+  }
+}
+
+.loader {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 20px solid #fff;
+  border-top: 20px solid transparent;
+  animation: spin 2s linear infinite;
+}
