@@ -1,6 +1,34 @@
 [
   {
     "id": 0,
+    "currentlyWorking": true,
+    "projectName": "⭕❌ Tickio",
+    "projectDesc": {
+      "PL": "Aplikacja fullstack do gry w kółko i krzyżyk z innymi graczami online.",
+      "EN": "A full-stack app for playing tic-tac-toe with other players online."
+    },
+    "stack": [
+      {
+        "name": "ReactJS"
+      },
+      {
+        "name": "Typescript"
+      },
+      {
+        "name": "REST Api"
+      },
+      {
+        "name": "Socket"
+      }
+    ],
+    "demoLink": "https://github.com/nowacki884/sandbox/tree/main/tickio",
+    "projectColor": "#7E4B8B",
+    "projectTextColor": "#EAEAEA",
+    "shadowColor": "#9156a0",
+    "finishDate": 0
+  },
+  {
+    "id": 1,
     "currentlyWorking": false,
     "projectName": "⚓ UnHook",
     "projectDesc": {
@@ -25,7 +53,7 @@
     "finishDate": 1751320800000
   },
   {
-    "id": 1,
+    "id": 2,
     "currentlyWorking": false,
     "projectName": "🏋️‍♀️ ShapeUp Fitness",
     "projectDesc": {
@@ -50,7 +78,7 @@
     "finishDate": 1748728800000
   },
   {
-    "id": 2,
+    "id": 3,
     "currentlyWorking": false,
     "projectName": "💸 BuckBuddy",
     "projectDesc": {
@@ -75,7 +103,7 @@
     "finishDate": 1743458400000
   },
   {
-    "id": 3,
+    "id": 4,
     "currentlyWorking": false,
     "projectName": "✅ FancyList",
     "projectDesc": {
@@ -100,7 +128,7 @@
     "finishDate": 1740783600000
   },
   {
-    "id": 4,
+    "id": 5,
     "currentlyWorking": false,
     "projectName": "🍅 Pomidoro Clock",
     "projectDesc": {
@@ -120,30 +148,5 @@
     "projectTextColor": "#040404",
     "shadowColor": "#cc3114",
     "finishDate": 1740783600000
-  },
-  {
-    "id": 5,
-    "currentlyWorking": false,
-    "projectName": "👟 Sneakers E-Com Store",
-    "projectDesc": {
-      "PL": "Przykładowa strona produktu sklepu internetowego z możliwością dodania przedmiotu i usunięcia go z koszyka",
-      "EN": "An example of an online store product page with the ability to add and remove an item from the cart"
-    },
-    "stack": [
-      {
-        "name": "HTML"
-      },
-      {
-        "name": "JavaScript"
-      },
-      {
-        "name": "CSS"
-      }
-    ],
-    "demoLink": "https://sneakersecomstore.netlify.app",
-    "projectColor": "#A7C1F5",
-    "projectTextColor": "#2E3D19",
-    "shadowColor": "#8ea4d0",
-    "finishDate": 1743458400000
   }
 ]
