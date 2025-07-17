@@ -9,9 +9,6 @@
     },
     "stack": [
       {
-        "name": "ReactJS"
-      },
-      {
         "name": "Typescript"
       },
       {
@@ -19,6 +16,12 @@
       },
       {
         "name": "Socket"
+      },
+      {
+        "name": "ExpressJS"
+      },
+      {
+        "name": "ReactJS"
       }
     ],
     "demoLink": "https://github.com/nowacki884/sandbox/tree/main/tickio",
