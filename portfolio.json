@@ -72,6 +72,9 @@
       },
       {
         "name": "Google Firebase"
+      },
+      {
+        "name": "CSS"
       }
     ],
     "demoLink": "https://shapeupfitness-dev.netlify.app",
@@ -153,3 +156,4 @@
     "finishDate": 1740783600000
   }
 ]
+
