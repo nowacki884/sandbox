@@ -49,7 +49,7 @@
         "name": "CSS"
       }
     ],
-    "demoLink": "https://github.com/nowacki884/sandbox/tree/main/acerace",
+    "demoLink": "https://aceracegame.netlify.app",
     "projectColor": "#2178AE",
     "projectTextColor": "#FFFFFF",
     "shadowColor": "#1c6694",
@@ -159,5 +159,6 @@
     "finishDate": 1740783600000
   }
 ]
+
 
 
