@@ -33,6 +33,31 @@
   {
     "id": 1,
     "currentlyWorking": false,
+    "projectName": "🃏 AceRace",
+    "projectDesc": {
+      "PL": "Prosta gra karciana inspirowana wyścigami konno",
+      "EN": "A simple card game inspired by horse racing"
+    },
+    "stack": [
+      {
+        "name": "HTML"
+      },
+      {
+        "name": "TypeScript"
+      },
+      {
+        "name": "CSS"
+      }
+    ],
+    "demoLink": "https://github.com/nowacki884/sandbox/tree/main/acerace",
+    "projectColor": "#2178AE",
+    "projectTextColor": "#FFFFFF",
+    "shadowColor": "#1c6694",
+    "finishDate": 1753999200000
+  },
+  {
+    "id": 2,
+    "currentlyWorking": false,
     "projectName": "⚓ UnHook",
     "projectDesc": {
       "PL": "Wtyczka do przeglądarki, która co 1 minutę automatycznie zamyka wybrane przez użytkownika karty w wybranym okresie czasu",
@@ -56,7 +81,7 @@
     "finishDate": 1751320800000
   },
   {
-    "id": 2,
+    "id": 3,
     "currentlyWorking": false,
     "projectName": "🏋️‍♀️ ShapeUp Fitness",
     "projectDesc": {
@@ -84,7 +109,7 @@
     "finishDate": 1748728800000
   },
   {
-    "id": 3,
+    "id": 4,
     "currentlyWorking": false,
     "projectName": "💸 BuckBuddy",
     "projectDesc": {
@@ -109,7 +134,7 @@
     "finishDate": 1743458400000
   },
   {
-    "id": 4,
+    "id": 5,
     "currentlyWorking": false,
     "projectName": "✅ FancyList",
     "projectDesc": {
@@ -132,28 +157,7 @@
     "projectTextColor": "#2B2917",
     "shadowColor": "#13a80a",
     "finishDate": 1740783600000
-  },
-  {
-    "id": 5,
-    "currentlyWorking": false,
-    "projectName": "🍅 Pomidoro Clock",
-    "projectDesc": {
-      "PL": "Strona typu pomodoro clock z możliwością wyboru czasu do odliczenia oraz pełnego ekranu do lepszego skupienia się",
-      "EN": "A pomodoro clock type website with the option to choose the time to count down and full screen mode for better focus"
-    },
-    "stack": [
-      {
-        "name": "ReactJS"
-      },
-      {
-        "name": "TypeScript"
-      }
-    ],
-    "demoLink": "https://pomidoroclock.netlify.app/",
-    "projectColor": "#f03a17",
-    "projectTextColor": "#040404",
-    "shadowColor": "#cc3114",
-    "finishDate": 1740783600000
   }
 ]
+
 
