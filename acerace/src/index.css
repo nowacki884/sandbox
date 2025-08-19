@@ -1,0 +1,155 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-bg: #222;
+  --clr-text: #f0f0f0;
+  --card-w: 75px;
+  --card-h: 109px;
+  --gap: 10px;
+}
+
+[class*=" pcard-"],
+[class^="pcard-"] {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /* width: 223px; */
+  width: var(--card-w);
+  /* height: 324px; */
+  height: var(--card-h);
+}
+
+body {
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  font-family: "Space Mono", sans-serif;
+}
+
+button {
+  all: unset;
+  position: relative;
+  padding: 0.5em 1em;
+  border: 0.1em solid var(--clr-text);
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+button::after {
+  content: "";
+  top: -0.3em;
+  left: -0.3em;
+  position: absolute;
+  width: calc(100% + 0.6em);
+  height: calc(100% + 0.6em);
+  border: 0.2em solid var(--clr-text);
+  border-radius: 0.7em;
+  opacity: 0;
+  transition: all 0.15s ease-in-out;
+}
+
+button.active,
+button:hover {
+  background-color: var(--clr-text);
+  color: var(--clr-bg);
+}
+
+button:focus-within::after {
+  opacity: 1;
+}
+
+header {
+  padding: 1em 2em;
+}
+
+main {
+  padding: 0 2em;
+  width: 100%;
+  min-height: calc(100svh - 5em);
+}
+
+.start-wrapper {
+  width: 100%;
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: calc(3 * var(--gap));
+  align-items: center;
+  justify-content: center;
+}
+
+.speed-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.speed-selection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+}
+
+.game-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap);
+  max-width: 100%;
+}
+
+.ace-field {
+  width: calc((4 * var(--card-w)) + (3 * var(--gap)));
+  height: calc((6 * var(--card-h)) + (5 * var(--gap)));
+  display: grid;
+  grid-template: repeat(6, 1fr) / repeat(4, 1fr);
+  gap: var(--gap);
+}
+
+.ace-wrapper {
+  width: var(--card-w);
+  height: var(--card-h);
+}
+
+.row-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.draw-section {
+  height: calc((6 * var(--card-h)) + (5 * var(--gap)));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-inline: calc(2 * var(--gap));
+}
+
+.gameover-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap);
+  padding-top: calc(3 * var(--gap));
+}
+
+@media screen and (max-width: 800px) {
+  :root {
+    --card-w: 45px;
+    --card-h: 65px;
+    --gap: 5px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .gameover-wrapper {
+    flex-direction: column;
+  }
+}
