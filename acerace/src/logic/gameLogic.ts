@@ -26,7 +26,7 @@ class DeckWithoutAces {
       for (let j = 0; j < this.#cards.length; j++) {
         const randomIdx: number = Math.floor(Math.random() * this.#cards.length)
 
-        ;[this.#cards[i], this.#cards[randomIdx]] = [this.#cards[randomIdx], this.#cards[i]]
+        ;[this.#cards[j], this.#cards[randomIdx]] = [this.#cards[randomIdx], this.#cards[j]]
       }
     }
   }
