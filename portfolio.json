@@ -2,32 +2,32 @@
   {
     "id": 0,
     "currentlyWorking": true,
-    "projectName": "⭕❌ Tickio",
+    "projectName": "DDM Gniezno",
     "projectDesc": {
-      "PL": "Aplikacja fullstack do gry w kółko i krzyżyk z innymi graczami online.",
+      "PL": "Oficjalna strona Diecezjalnego Duszpasterstwa Młodzieży w Gnieźnie",
       "EN": "A full-stack app for playing tic-tac-toe with other players online."
     },
     "stack": [
       {
+        "name": "NEXT.js"
+      },
+      {
         "name": "TypeScript"
       },
       {
-        "name": "REST Api"
+        "name": "Postgres/NeonDB"
       },
       {
-        "name": "Socket"
+        "name": "Cloudinary"
       },
       {
-        "name": "ExpressJS"
-      },
-      {
-        "name": "ReactJS"
+        "name": "CSS"
       }
     ],
-    "demoLink": "https://github.com/nowacki884/sandbox/tree/main/tickio",
-    "projectColor": "#9156a0",
-    "projectTextColor": "#EAEAEA",
-    "shadowColor": "#7E4B8B",
+    "demoLink": "https://ddm-navy.vercel.app",
+    "projectColor": "#052240",
+    "projectTextColor": "#FFFFFF",
+    "shadowColor": "#041d3e",
     "finishDate": 0
   },
   {
